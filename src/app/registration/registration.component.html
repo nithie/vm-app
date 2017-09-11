@@ -1,0 +1,42 @@
+<md-grid-list cols="1" fxLayout rowHeight="5em">
+  <md-grid-tile id="header" [colspan]=1><i>Bell</i>
+  </md-grid-tile>
+</md-grid-list>
+
+<md-grid-list cols="3" rowHeight="3em">
+  <md-grid-tile class="form-title" [colspan]=1>Sign In.</md-grid-tile>
+  <md-grid-tile class="form-title" [colspan]=2><i>Sign Up.</i>
+  </md-grid-tile>
+</md-grid-list>
+
+<md-grid-list cols="3">
+  <md-grid-tile [colspan]=1><app-login></app-login></md-grid-tile>
+
+  <md-grid-tile id="form" [colspan]=2>
+
+    <form class="registration-form" fxLayout>
+
+      <md-form-field class="registration-full-width">
+        <input [(ngModel)]="userdata.name" mdInput placeholder="Name" #username="ngModel" name="username" required minlength="2"
+        />
+      </md-form-field>
+      <div *ngIf="username.invalid && (username.touched || username.dirty)" class="alert alert-danger">
+        <div *ngIf="username.errors.minlength" >Too short.</div>
+      </div>
+
+      <md-form-field class="registration-full-width">
+        <input type="email" [(ngModel)]="userdata.email" mdInput placeholder="email" required name="useremail" #email="ngModel"/>
+      </md-form-field>
+
+      <md-form-field class="registration-full-width">
+        <input type="password" [(ngModel)]="userdata.password" mdInput placeholder="Password" required name="password" />
+      </md-form-field>
+
+      <md-form-field class="registration-full-width">
+        <input type="password" [(ngModel)]="userdata.reenter" mdInput placeholder="Renter-Password" required name="reenter" />
+      </md-form-field>
+
+      <button md-raised-button type="submit" color="primary" (click)="addNewUser()">Sign Up</button>
+
+    </form>
+  </md-grid-tile>

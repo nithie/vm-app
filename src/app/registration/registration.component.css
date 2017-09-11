@@ -1,0 +1,25 @@
+
+#header {
+    background:#11469b;
+  }
+#header i{
+    font-size: 3em;
+    color: white;
+}
+.registration-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+.registration-full-width {
+    width: 100%;
+  }
+.form-title{
+    font-size: 3em;
+    color:black;
+    font-family: sans-serif Arial, Helvetica, sans-serif
+}
+.alert{
+    font-style: italic;
+    color: red
+}
